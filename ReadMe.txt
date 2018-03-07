@@ -7,3 +7,4 @@ Duynt
 thinh tay to
 dung tay to
 thich tinh thu
+vai chuong
