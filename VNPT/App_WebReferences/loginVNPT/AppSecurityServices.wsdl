@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AppSecurityServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.34.1.3/WebServices/AppSecurityServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.34.1.3/WebServices/AppSecurityServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.34.1.3/WebServices/AppSecurityServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VnptHdgPortal.Web.Lib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAppSecurityServices_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_LoginWithOtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithOtp" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_LoginWithOtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ReCreateOtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReCreateOtp" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ReCreateOtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReCreateOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_OtpLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:OtpLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_OtpLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OtpLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getRoleofUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRoleofUser" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getRoleofUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRoleofUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getRightofUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRightofUser" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getRightofUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRightofUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ChangeNewPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeNewPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ChangeNewPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeNewPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ForgetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_ForgetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_InfoUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:InfoUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_InfoUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InfoUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getAppConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAppConfig" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getAppConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAppConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_sendSms_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendSms" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_sendSms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_sendSmsWithChanel_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendSmsWithChanel" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_sendSmsWithChanel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendSmsWithChanelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_sendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_sendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getApplicationNameByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getApplicationNameByPage" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getApplicationNameByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getApplicationNameByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_FwReCreateOtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:FwReCreateOtp" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_FwReCreateOtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FwReCreateOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_FwVerifyOtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:FwVerifyOtp" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_FwVerifyOtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FwVerifyOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_FwSmsSend_InputMessage">
+    <wsdl:part name="parameters" element="tns:FwSmsSend" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_FwSmsSend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FwSmsSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getAllLocalFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllLocalFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getAllLocalFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllLocalFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_createFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:createFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_createFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_moveFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:moveFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_moveFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:moveFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_deleteFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_deleteFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_moveFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:moveFile" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_moveFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:moveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_deleteFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteFile" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_deleteFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_copyFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:copyFile" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_copyFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:copyFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_createPersonalResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:createPersonalResource" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_createPersonalResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createPersonalResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_checkExitsFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkExitsFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_checkExitsFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkExitsFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_checkExitsFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkExitsFile" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_checkExitsFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkExitsFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getFileInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getFileInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getFileListOfFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFileListOfFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getFileListOfFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFileListOfFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getFileListOfCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFileListOfCollection" />
+  </wsdl:message>
+  <wsdl:message name="IAppSecurityServices_getFileListOfCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFileListOfCollectionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAppSecurityServices">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/Login" message="tns:IAppSecurityServices_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/LoginResponse" message="tns:IAppSecurityServices_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithOtp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/LoginWithOtp" message="tns:IAppSecurityServices_LoginWithOtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/LoginWithOtpResponse" message="tns:IAppSecurityServices_LoginWithOtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReCreateOtp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/ReCreateOtp" message="tns:IAppSecurityServices_ReCreateOtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/ReCreateOtpResponse" message="tns:IAppSecurityServices_ReCreateOtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OtpLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/OtpLogin" message="tns:IAppSecurityServices_OtpLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/OtpLoginResponse" message="tns:IAppSecurityServices_OtpLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoleofUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getRoleofUser" message="tns:IAppSecurityServices_getRoleofUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getRoleofUserResponse" message="tns:IAppSecurityServices_getRoleofUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRightofUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getRightofUser" message="tns:IAppSecurityServices_getRightofUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getRightofUserResponse" message="tns:IAppSecurityServices_getRightofUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/ChangePassword" message="tns:IAppSecurityServices_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/ChangePasswordResponse" message="tns:IAppSecurityServices_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeNewPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/ChangeNewPassword" message="tns:IAppSecurityServices_ChangeNewPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/ChangeNewPasswordResponse" message="tns:IAppSecurityServices_ChangeNewPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/ForgetPassword" message="tns:IAppSecurityServices_ForgetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/ForgetPasswordResponse" message="tns:IAppSecurityServices_ForgetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/InfoUpdate" message="tns:IAppSecurityServices_InfoUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/InfoUpdateResponse" message="tns:IAppSecurityServices_InfoUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAppConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getAppConfig" message="tns:IAppSecurityServices_getAppConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getAppConfigResponse" message="tns:IAppSecurityServices_getAppConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendSms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/sendSms" message="tns:IAppSecurityServices_sendSms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/sendSmsResponse" message="tns:IAppSecurityServices_sendSms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendSmsWithChanel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/sendSmsWithChanel" message="tns:IAppSecurityServices_sendSmsWithChanel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/sendSmsWithChanelResponse" message="tns:IAppSecurityServices_sendSmsWithChanel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/sendMessage" message="tns:IAppSecurityServices_sendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/sendMessageResponse" message="tns:IAppSecurityServices_sendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationNameByPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getApplicationNameByPage" message="tns:IAppSecurityServices_getApplicationNameByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getApplicationNameByPageResponse" message="tns:IAppSecurityServices_getApplicationNameByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FwReCreateOtp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/FwReCreateOtp" message="tns:IAppSecurityServices_FwReCreateOtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/FwReCreateOtpResponse" message="tns:IAppSecurityServices_FwReCreateOtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FwVerifyOtp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/FwVerifyOtp" message="tns:IAppSecurityServices_FwVerifyOtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/FwVerifyOtpResponse" message="tns:IAppSecurityServices_FwVerifyOtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FwSmsSend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/FwSmsSend" message="tns:IAppSecurityServices_FwSmsSend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/FwSmsSendResponse" message="tns:IAppSecurityServices_FwSmsSend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllLocalFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getAllLocalFolder" message="tns:IAppSecurityServices_getAllLocalFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getAllLocalFolderResponse" message="tns:IAppSecurityServices_getAllLocalFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/createFolder" message="tns:IAppSecurityServices_createFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/createFolderResponse" message="tns:IAppSecurityServices_createFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="moveFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/moveFolder" message="tns:IAppSecurityServices_moveFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/moveFolderResponse" message="tns:IAppSecurityServices_moveFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/deleteFolder" message="tns:IAppSecurityServices_deleteFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/deleteFolderResponse" message="tns:IAppSecurityServices_deleteFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="moveFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/moveFile" message="tns:IAppSecurityServices_moveFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/moveFileResponse" message="tns:IAppSecurityServices_moveFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/deleteFile" message="tns:IAppSecurityServices_deleteFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/deleteFileResponse" message="tns:IAppSecurityServices_deleteFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="copyFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/copyFile" message="tns:IAppSecurityServices_copyFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/copyFileResponse" message="tns:IAppSecurityServices_copyFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalResource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/createPersonalResource" message="tns:IAppSecurityServices_createPersonalResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/createPersonalResourceResponse" message="tns:IAppSecurityServices_createPersonalResource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkExitsFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/checkExitsFolder" message="tns:IAppSecurityServices_checkExitsFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/checkExitsFolderResponse" message="tns:IAppSecurityServices_checkExitsFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkExitsFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/checkExitsFile" message="tns:IAppSecurityServices_checkExitsFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/checkExitsFileResponse" message="tns:IAppSecurityServices_checkExitsFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFileInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getFileInfo" message="tns:IAppSecurityServices_getFileInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getFileInfoResponse" message="tns:IAppSecurityServices_getFileInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFileListOfFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getFileListOfFolder" message="tns:IAppSecurityServices_getFileListOfFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getFileListOfFolderResponse" message="tns:IAppSecurityServices_getFileListOfFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFileListOfCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppSecurityServices/getFileListOfCollection" message="tns:IAppSecurityServices_getFileListOfCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppSecurityServices/getFileListOfCollectionResponse" message="tns:IAppSecurityServices_getFileListOfCollection_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAppSecurityServices" type="tns:IAppSecurityServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithOtp">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/LoginWithOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReCreateOtp">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/ReCreateOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtpLogin">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/OtpLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoleofUser">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getRoleofUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRightofUser">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getRightofUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeNewPassword">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/ChangeNewPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgetPassword">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/ForgetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoUpdate">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/InfoUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAppConfig">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getAppConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendSms">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/sendSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendSmsWithChanel">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/sendSmsWithChanel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMessage">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/sendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationNameByPage">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getApplicationNameByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FwReCreateOtp">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/FwReCreateOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FwVerifyOtp">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/FwVerifyOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FwSmsSend">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/FwSmsSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLocalFolder">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getAllLocalFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createFolder">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/createFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moveFolder">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/moveFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFolder">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/deleteFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moveFile">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/moveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFile">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/deleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="copyFile">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/copyFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalResource">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/createPersonalResource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkExitsFolder">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/checkExitsFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkExitsFile">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/checkExitsFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFileInfo">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFileListOfFolder">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getFileListOfFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFileListOfCollection">
+      <soap:operation soapAction="http://tempuri.org/IAppSecurityServices/getFileListOfCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppSecurityServices">
+    <wsdl:port name="BasicHttpBinding_IAppSecurityServices" binding="tns:BasicHttpBinding_IAppSecurityServices">
+      <soap:address location="http://10.34.1.3/WebServices/AppSecurityServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
