@@ -2,6 +2,7 @@
 <section class="content-header">
       <h1>
         Danh mục nhà cung cấp thiết bị
+          <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
       </h1>
 </section>
 <section class="content">

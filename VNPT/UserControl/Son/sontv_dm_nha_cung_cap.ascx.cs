@@ -100,16 +100,23 @@ public partial class UserControl_Son_sontv_dm_kho : System.Web.UI.UserControl
             con.Open();
             OracleDataReader reader = command.ExecuteReader();
             {
-             
+
                 // Always call Read before accessing data.
-             
-                    if (reader.HasRows)
-                    {
-                        Response.Write("<script language = \"JavaScript\">");
-                        Response.Write("alert(\'Xóa thành công');");
-                        Response.Write("</script");
-                        return;
-                    }
+
+                if (reader.HasRows)
+                {
+                    //Response.Write("<script language = \"JavaScript\">");
+                    //Response.Write("alert(\'Xóa thành công');");
+                    //Response.Write("</script");
+                    //return;
+                    TextBox1.Text = "Co du lieu";
+
+                }
+                else
+                    TextBox1.Text = "Khong co du lieu";
+                {
+
+                }
                 reader.Close();
             }
         }
