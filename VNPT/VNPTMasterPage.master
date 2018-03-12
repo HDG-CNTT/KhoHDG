@@ -9,26 +9,26 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="~/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="~/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="~/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="~/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="~/dist/css/skins/_all-skins.min.css">
   <!-- Morris chart -->
-  <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+  <link rel="stylesheet" href="~/bower_components/morris.js/morris.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="~/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="~/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="~/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="~/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -344,18 +344,20 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN MENU</li>
-<%--        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+       <%-- <li class="active treeview">
+          <a href="Default.aspx">
+            <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
+            </a>
+          
+        </li>--%>
+          <li>
+          <a href="Default.aspx">
+            <i class="fa fa-th"></i> <span>Trang chủ</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-green">new</small>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-        </li>--%>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
@@ -424,7 +426,7 @@
             <li><a><i class="fa fa-circle-o"></i> xyz</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" id ="menuQuanTri" runat="server">
           <a href="#">
             <i class="fa fa-table"></i> <span>Quản trị hệ thống</span>
             <span class="pull-right-container">
@@ -432,10 +434,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a><i class="fa fa-circle-o"></i>Danh mục kho</a></li>
+            <li><a href="dm_kho.aspx"><i class="fa fa-circle-o"></i>Danh mục kho</a></li>
+            <li><a href="dm_nha_cung_cap.aspx"><i class="fa fa-circle-o"></i> Danh mục nhà cung cấp</a></li>
             <li><a><i class="fa fa-circle-o"></i> Danh mục thiết bị</a></li>
-              <li><a><i class="fa fa-circle-o"></i> Danh mục dự án</a></li>
-              <li><a><i class="fa fa-circle-o"></i> Quản trị người dùng</a></li>
+            <li><a href="dm_nguoi_dung.aspx"><i class="fa fa-circle-o"></i> Danh mục người dùng</a></li>
+              
+              
           </ul>
         </li>
         <%--<li>
