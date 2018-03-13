@@ -1,6 +1,6 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Phieu_xuat_khach_hang.ascx.cs" Inherits="UserControl_Duy_Phieu_xuat_khach_hang" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Phieu_thu_thiet_bi_khach_hang.ascx.cs" Inherits="UserControl_Duy_Phieu_thu_thiet_bi_khach_hang" %>
 <section class="content-header">
-    <h1>Phiếu xuất thiết bị khách hàng</h1>
+    <h1>Phiếu thu hồi thiết bị khách hàng</h1>
 </section>
 <section class="content">
     <div class="box box-default">
